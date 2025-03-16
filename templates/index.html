@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>WEBVIEWER</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    </head>
+    <body style="display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;">
+        <div style="border: 2px solid lightblue; padding: 20px; text-align: center; width: 50%;">
+            <form action="/" method="POST">
+                <input type="text" name="title" placeholder="Movie Title" required>
+                <input type="number" name="year" placeholder="Release Year" required>
+                <input type="text" name="genre" placeholder="Genre" required>
+                <input type="text" name="movie_url" placeholder="Movie URL" required>
+                <button type="submit">Add Movie</button>
+            </form>
+        
+            <!-- Movie List -->
+             <div class="movie-list">
+               <aside>
+                <h2>Movie List</h2>
+                <ul>
+                    {% for movie in movies %}
+                        <li>
+                            <h3>{{ movie.movie_title }}
+                            {{ movie.movie_year }}
+                            {{ movie.movie_genre }}</h3>
+                            <p><a href="{{ movie.movie_url }}">Watch Now</a></p>
+                        </li>
+                    {% endfor %}
+                </ul>
+                
+               </aside>
+            </div>
+            <div class="delete">
+                <form action="/drop" method="POST" onsubmit="return confirm('Are you sure you want to delete all movies?');">
+                    <button type="submit" style="background-color: red; color: white;">Delete All Movies</button>
+                </form>
+            </div>
+        <script src="" async defer></script>
+    </body>
+</html>

@@ -1,0 +1,17 @@
+body {
+    background-color: grey;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+h1 {
+    color: lightblue;
+    text-align: center;
+}
+label {
+    color: lightblue;
+    font-size: 18px;
+}
+.movie_list {
+    color: lightblue;
+}
