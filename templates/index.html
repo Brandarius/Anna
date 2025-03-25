@@ -25,13 +25,13 @@
                 <ul>
                     {% for movie in movies %}
                         <li>
-                            <h3>{{ movie.movie_title }}
-                            {{ movie.movie_year }}
-                            {{ movie.movie_genre }}</h3>
-                            <p><a href="{{ movie.movie_url }}">Watch Now</a></p>
+                            <h3><a href="{{ url_for('movie_detail', movie_id=movie.id) }}">{{ movie.movie_title }}</a></h3>
+                            <p>{{ movie.movie_year }}</p>
+                            <p>{{ movie.movie_genre }}</p>
                         </li>
                     {% endfor %}
                 </ul>
+                
                 
                </aside>
             </div>

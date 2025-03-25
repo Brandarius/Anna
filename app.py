@@ -52,6 +52,13 @@ def drop_database():
         db.create_all()  # Recreate empty tables
     return redirect(url_for('index'))
 
+
+@app.route('/movie/<int:movie_id>')
+def movie_detail(movie_id):
+    movie = Movie.query.get_or_404(movie_id)
+    return render_template('movie.html', movie=movie)
+
+
 if __name__ == '__main__':
 
     app.run(debug=True)

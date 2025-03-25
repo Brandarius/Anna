@@ -15,3 +15,8 @@ label {
 .movie_list {
     color: lightblue;
 }
+.movie_list_item {
+    border: solid black 3px;
+    border-radius: 10px;
+    background-color: bisque;
+}
